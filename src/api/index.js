@@ -11,8 +11,12 @@ function fetchNewsList() {
     return axios.get(`${config.baseUrl}news/1.json`);
 }
 
-function fetchJobsList() {
-    return axios.get(`${config.baseUrl}jobs/1.json`);
+async function fetchJobsList() {
+    try{
+        return await axios.get(`${config.baseUrl}jobs/1.json`);
+    }catch(error) {
+        console.log(error);
+    }
 }
 
 function fetchAsksList() {
